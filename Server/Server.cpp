@@ -4,6 +4,10 @@
 #include <string.h>
 #include <stdlib.h>
 
+
+//TODO *** IMPORTANT*** add handling for Datagrams that go over the byte limit, else exploit that can make client-sided code can be manipulated to make ANY client-sided code LIVE
+
+
 int main(){
   int udpSocket, nBytes;
   char buffer[1024];
@@ -18,7 +22,7 @@ int main(){
   /*Configure settings in address struct*/
   serverAddr.sin_family = AF_INET;
   serverAddr.sin_port = htons(7891);
-  serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+  serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1"); //Add VPS server here
   memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);  
 
   /*Bind socket with address struct*/
