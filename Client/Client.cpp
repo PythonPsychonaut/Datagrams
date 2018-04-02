@@ -22,7 +22,7 @@ int main(){
   addr_size = sizeof serverAddr;
 
   while(1){
-    printf("Type a sentence to send to server:\n");
+    printf("Enter message:\n");
     fgets(buffer,1024,stdin);
     printf("You typed: %s",buffer);
 
